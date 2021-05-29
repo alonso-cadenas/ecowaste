@@ -1,1 +1,1 @@
-# eco-waste
+# EcoWaste
