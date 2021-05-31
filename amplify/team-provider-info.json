@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ecowaste-dev-204515-authRole",
+      "UnauthRoleArn": "arn:aws:iam::205727439570:role/amplify-ecowaste-dev-204515-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::205727439570:role/amplify-ecowaste-dev-204515-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-ecowaste-dev-204515-deployment",
+      "UnauthRoleName": "amplify-ecowaste-dev-204515-unauthRole",
+      "StackName": "amplify-ecowaste-dev-204515",
+      "StackId": "arn:aws:cloudformation:us-east-2:205727439570:stack/amplify-ecowaste-dev-204515/da790af0-c1b1-11eb-a455-0a30b5a1ab58",
+      "AmplifyAppId": "d2f00wpfbz1k7j"
+    }
+  }
+}
