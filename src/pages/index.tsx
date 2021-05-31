@@ -57,47 +57,57 @@ export default function Home({ todos = [] }: { todos: Todo[] }) {
         <h1 className={styles.title}>EcoWaste</h1>
 
         <p className={styles.description}>
-          <code className={styles.code}>{todos.length}</code>
-          Todos
+          {/*<code className={styles.code}>{todos.length}</code>*/}
+          Enter a keyword to find disposal information
         </p>
 
-        <div className={styles.grid}>
-          {todos.map((todo) => (
-            <a href={`/todo/${todo.id}`} key={todo.id}>
-              <h3>{todo.name}</h3>
-              <p>{todo.description}</p>
-            </a>
-          ))}
+        <input
+            aria-label='search'
+            autoComplete='off'
+            data-search-input=''
+            id='search-input'
+            placeholder='Search'
+            type='text'
+        />
+        <button>Search</button>
 
-          <div className={styles.card}>
-            <h3 className={styles.title}>New Todo</h3>
+        {/*<div className={styles.grid}>*/}
+        {/*  {todos.map((todo) => (*/}
+        {/*    <a href={`/todo/${todo.id}`} key={todo.id}>*/}
+        {/*      <h3>{todo.name}</h3>*/}
+        {/*      <p>{todo.description}</p>*/}
+        {/*    </a>*/}
+        {/*  ))}*/}
 
-            {/*<AmplifyAuthenticator>*/}
-              <form onSubmit={handleCreateTodo}>
-                <fieldset>
-                  <legend>Title</legend>
-                  <input
-                    defaultValue={`Today, ${new Date().toLocaleTimeString()}`}
-                    name="title"
-                  />
-                </fieldset>
+        {/*  <div className={styles.card}>*/}
+        {/*    <h3 className={styles.title}>New Todo</h3>*/}
 
-                <fieldset>
-                  <legend>Content</legend>
-                  <textarea
-                    defaultValue="I built an Amplify app with Next.js!"
-                    name="content"
-                  />
-                </fieldset>
+        {/*    <AmplifyAuthenticator>*/}
+        {/*      <form onSubmit={handleCreateTodo}>*/}
+        {/*        <fieldset>*/}
+        {/*          <legend>Title</legend>*/}
+        {/*          <input*/}
+        {/*            defaultValue={`Today, ${new Date().toLocaleTimeString()}`}*/}
+        {/*            name="title"*/}
+        {/*          />*/}
+        {/*        </fieldset>*/}
 
-                <button>Create Todo</button>
-                <button type="button" onClick={() => Auth.signOut()}>
-                  Sign out
-                </button>
-              </form>
-            {/*</AmplifyAuthenticator>*/}
-          </div>
-        </div>
+        {/*        <fieldset>*/}
+        {/*          <legend>Content</legend>*/}
+        {/*          <textarea*/}
+        {/*            defaultValue="I built an Amplify app with Next.js!"*/}
+        {/*            name="content"*/}
+        {/*          />*/}
+        {/*        </fieldset>*/}
+
+        {/*        <button>Create Todo</button>*/}
+        {/*        <button type="button" onClick={() => Auth.signOut()}>*/}
+        {/*          Sign out*/}
+        {/*        </button>*/}
+        {/*      </form>*/}
+        {/*    </AmplifyAuthenticator>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </main>
     </div>
   )
