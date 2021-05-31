@@ -49,12 +49,12 @@ export default function Home({ todos = [] }: { todos: Todo[] }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Amplify + Next.js</title>
+        <title>EcoWaste</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Amplify + Next.js</h1>
+        <h1 className={styles.title}>EcoWaste</h1>
 
         <p className={styles.description}>
           <code className={styles.code}>{todos.length}</code>
@@ -72,7 +72,7 @@ export default function Home({ todos = [] }: { todos: Todo[] }) {
           <div className={styles.card}>
             <h3 className={styles.title}>New Todo</h3>
 
-            <AmplifyAuthenticator>
+            {/*<AmplifyAuthenticator>*/}
               <form onSubmit={handleCreateTodo}>
                 <fieldset>
                   <legend>Title</legend>
@@ -95,7 +95,7 @@ export default function Home({ todos = [] }: { todos: Todo[] }) {
                   Sign out
                 </button>
               </form>
-            </AmplifyAuthenticator>
+            {/*</AmplifyAuthenticator>*/}
           </div>
         </div>
       </main>
