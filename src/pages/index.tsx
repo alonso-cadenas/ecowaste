@@ -49,8 +49,8 @@ export default function Home({ todos = [] }: { todos: Todo[] }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Amplify + Next.js</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>EcoWaste</title>
+        <link rel="icon" href={'/favicon.ico'} />
       </Head>
 
       <main className={styles.main}>
