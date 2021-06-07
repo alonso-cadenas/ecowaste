@@ -2,7 +2,7 @@ import styles from './search.module.css';
 import { useState } from 'react';
 import { sanitizeInput } from '../../utils/sanitizeInput';
 
-export function Search(a, b) {
+export function Search() {
     const [searchTerm, setSearchTerm] = useState('');
     const [showDropdown, setShowDropdown] = useState(false);
     const [isSearching, setIsSearching] = useState(false);

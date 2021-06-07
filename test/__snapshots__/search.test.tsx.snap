@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search renders without dropdown 1`] = `
+<DocumentFragment>
+  <section
+    class="search"
+  >
+    <header
+      id="search-header"
+    >
+      <input
+        aria-label="search"
+        autocomplete="off"
+        id="search-input"
+        placeholder="Search"
+        type="text"
+        value=""
+      />
+    </header>
+  </section>
+</DocumentFragment>
+`;
