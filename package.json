@@ -1,14 +1,15 @@
 {
-  "name": "with-aws-amplify-typescript",
+  "name": "ecowaste",
   "version": "1.0.0",
-  "description": "",
+  "description": "Learn how to dispose of your household items",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alonso Cadenas",
   "license": "MIT",
   "dependencies": {
     "@aws-amplify/ui-react": "^1.0.7",
@@ -18,9 +19,16 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.23",
     "@types/node": "^14.14.41",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
+    "babel-jest": "^27.0.2",
+    "jest": "^27.0.4",
+    "ts-node": "^10.0.0",
     "typescript": "^4.2.4"
   }
 }

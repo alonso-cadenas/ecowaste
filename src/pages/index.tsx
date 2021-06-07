@@ -54,7 +54,7 @@ export default function Home({ todos = [] }: { todos: Todo[] }) {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Amplify + Next.js</h1>
+        <h1 className={styles.title}>EcoWaste</h1>
 
         <p className={styles.description}>
           <code className={styles.code}>{todos.length}</code>
