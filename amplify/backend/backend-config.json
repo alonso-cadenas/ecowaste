@@ -1,4 +1,12 @@
 {
+  "auth": {
+    "ecowasted9b303cf": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
   "api": {
     "ecowaste": {
       "service": "AppSync",
@@ -8,11 +16,18 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7,
-              "description": "This is the api key"
+              "apiKeyExpirationDays": 365,
+              "description": ""
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authecowasted9b303cf"
+              }
+            }
+          ]
         }
       }
     }

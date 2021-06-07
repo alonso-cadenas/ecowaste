@@ -11,7 +11,7 @@ import styles from '../../styles/Home.module.css'
 
 Amplify.configure({ ...awsExports, ssr: true })
 
-export default function ItemPage({ todo }: { todo: Todo }) {
+export default function TodoPage({ todo }: { todo: Todo }) {
   const router = useRouter()
 
   if (router.isFallback) {
