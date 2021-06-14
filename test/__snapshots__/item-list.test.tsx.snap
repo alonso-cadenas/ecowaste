@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemList renders with items 1`] = `
+<DocumentFragment>
+  <section
+    class="itemList"
+    id="item-list"
+  >
+    <ul>
+      <li>
+        metal spoon
+      </li>
+      <li>
+        plastic spoon
+      </li>
+      <li>
+        wooden spoon
+      </li>
+    </ul>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`ItemList renders without items 1`] = `
+<DocumentFragment>
+  <section
+    class="itemList"
+    id="item-list"
+  >
+    <ul />
+  </section>
+</DocumentFragment>
+`;

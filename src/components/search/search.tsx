@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { sanitizeInput } from '../../utils/sanitizeInput';
 
 export function Search() {
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
     const [showDropdown, setShowDropdown] = useState(false);
     const [isSearching, setIsSearching] = useState(false);
     const [results, setResults] = useState([]);
@@ -17,15 +17,15 @@ export function Search() {
                     id='search-input'
                     onChange={(e) => {
                         const value = sanitizeInput(e?.target?.value);
-                        if (value !== searchTerm) {
+                        if (value !== searchQuery) {
                             setIsSearching(true);
-                            setSearchTerm(value);
+                            setSearchQuery(value);
                         }
                     }}
                     onFocus={() => setShowDropdown(true)}
                     placeholder='Search'
                     type='text'
-                    value={searchTerm}
+                    value={searchQuery}
                 />
             </header>
         </section>
