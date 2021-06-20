@@ -1,35 +1,35 @@
-import { AmplifyAuthenticator } from '@aws-amplify/ui-react'
-import { Amplify, API, Auth, withSSRContext } from 'aws-amplify'
-import Head from 'next/head'
-import awsExports from '../aws-exports'
-import { createTodo } from '../graphql/mutations'
-import { listTodos } from '../graphql/queries'
+import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
+import { Amplify, API, Auth, withSSRContext } from 'aws-amplify';
+import Head from 'next/head';
+import awsExports from '../aws-exports';
+import { createTodo } from '../graphql/mutations';
+import { listTodos } from '../graphql/queries';
 import {
   CreateTodoInput,
   CreateTodoMutation,
   ListTodosQuery,
   Todo,
-} from '../API'
-import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api'
-import { useRouter } from 'next/router'
-import { GetServerSideProps } from 'next'
-import styles from '../styles/Home.module.css'
+} from '../API';
+import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
+import { useRouter } from 'next/router';
+import { GetServerSideProps } from 'next';
+import styles from '../styles/Home.module.css';
 
-Amplify.configure({ ...awsExports, ssr: true })
+Amplify.configure({ ...awsExports, ssr: true });
 
 export default function Home({ todos = [] }: { todos: Todo[] }) {
-  const router = useRouter()
+  const router = useRouter();
 
   async function handleCreateTodo(event) {
-    event.preventDefault()
+    event.preventDefault();
 
-    const form = new FormData(event.target)
+    const form = new FormData(event.target);
 
     try {
       const createInput: CreateTodoInput = {
         name: form.get('title').toString(),
         description: form.get('content').toString(),
-      }
+      };
 
       const request = (await API.graphql({
         authMode: GRAPHQL_AUTH_MODE.AMAZON_COGNITO_USER_POOLS,
@@ -37,12 +37,12 @@ export default function Home({ todos = [] }: { todos: Todo[] }) {
         variables: {
           input: createInput,
         },
-      })) as { data: CreateTodoMutation; errors: any[] }
+      })) as { data: CreateTodoMutation; errors: any[] };
 
-      router.push(`/todo/${request.data.createTodo.id}`)
+      router.push(`/todo/${request.data.createTodo.id}`);
     } catch ({ errors }) {
-      console.error(...errors)
-      throw new Error(errors[0].message)
+      console.error(...errors);
+      throw new Error(errors[0].message);
     }
   }
 
@@ -100,19 +100,19 @@ export default function Home({ todos = [] }: { todos: Todo[] }) {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const SSR = withSSRContext({ req })
+  const SSR = withSSRContext({ req });
 
   const response = (await SSR.API.graphql({ query: listTodos })) as {
-    data: ListTodosQuery
-  }
+    data: ListTodosQuery;
+  };
 
   return {
     props: {
       todos: response.data.listTodos.items,
     },
-  }
-}
+  };
+};

@@ -4,7 +4,6 @@ about: Functional requirement for this project
 title: ''
 labels: ''
 assignees: ''
-
 ---
 
 **Goal in Context**
