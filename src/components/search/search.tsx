@@ -1,6 +1,11 @@
 import styles from './search.module.css';
 import { useEffect, useRef, useState } from 'react';
-import { getSearchResults, goToSearchPage, sanitizeInput } from '../../utils';
+import {
+  getMessage,
+  getSearchResults,
+  goToSearchPage,
+  sanitizeInput,
+} from '../../utils';
 
 export function Search() {
   const ref = useRef(null);
@@ -78,6 +83,16 @@ export function Search() {
           <i className={showDropdown ? styles.iconClose : styles.iconSearch} />
         </button>
       </header>
+
+      {showDropdown && (
+        <section className={styles.searchDropdown} id={'search-dropdown'}>
+          {!showResults && (
+            <p className={styles.message} id={'dropdown-message'}>
+              {getMessage(isSearching, searchQuery.length)}
+            </p>
+          )}
+        </section>
+      )}
     </section>
   );
 }

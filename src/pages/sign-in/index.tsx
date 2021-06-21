@@ -10,7 +10,7 @@ import { Header } from '../../components';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
-export default function Home() {
+export default function SignInPage() {
   return (
     <>
       <Head>

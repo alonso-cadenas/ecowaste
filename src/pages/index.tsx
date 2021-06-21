@@ -18,7 +18,7 @@ import { Header, Search } from '../components';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
-export default function Home({ todos = [] }: { todos: Todo[] }) {
+export default function HomePage({ todos = [] }: { todos: Todo[] }) {
   const router = useRouter();
 
   async function handleCreateTodo(event) {
