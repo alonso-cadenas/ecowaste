@@ -14,7 +14,7 @@ import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import { useRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
 import styles from '../styles/Home.module.css';
-import { Header } from '../components';
+import { Header, Search } from '../components';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
@@ -59,6 +59,8 @@ export default function Home({ todos = [] }: { todos: Todo[] }) {
       <main className={styles.main}>
         <h1 className={styles.title}>EcoWaste</h1>
         <h2>Learn how to dispose of your household items</h2>
+        <Search />
+        <img id={'banner'} alt={'Banner'} src={'/banner.jpeg'} />
 
         {/*<p className={styles.description}>*/}
         {/*  <code className={styles.code}>{todos.length}</code>*/}

@@ -23,7 +23,7 @@ export function Search() {
             }
           }}
           onFocus={() => setShowDropdown(true)}
-          placeholder="Search"
+          placeholder="Search an item"
           type="text"
           value={searchQuery}
         />

@@ -1,4 +1,8 @@
-import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
+import {
+  AmplifyAuthenticator,
+  AmplifyContainer,
+  AmplifySignOut,
+} from '@aws-amplify/ui-react';
 import { Amplify, Auth } from 'aws-amplify';
 import Head from 'next/head';
 import awsExports from '../../aws-exports';
@@ -17,12 +21,12 @@ export default function Home() {
       <Header showSignIn={false} />
 
       <main>
-        <AmplifyAuthenticator>
-          <h1>Welcome!</h1>
-          <button type="button" onClick={() => Auth.signOut()}>
-            Sign out
-          </button>
-        </AmplifyAuthenticator>
+        <AmplifyContainer>
+          <AmplifyAuthenticator>
+            <h1>Welcome!</h1>
+            <AmplifySignOut />
+          </AmplifyAuthenticator>
+        </AmplifyContainer>
       </main>
     </>
   );
