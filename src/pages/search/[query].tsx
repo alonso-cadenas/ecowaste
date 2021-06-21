@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import { ItemList } from '../../components';
+import { Header, ItemList } from '../../components';
 
 export default function SearchPage({
   items = [],
@@ -11,6 +11,7 @@ export default function SearchPage({
   const hasResults = !!items?.length;
   return (
     <section>
+      <Header />
       <h1>
         {hasResults ? 'View all search results' : 'Unable to find any results'}{' '}
         for &quot;{query}&quot;

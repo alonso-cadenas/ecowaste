@@ -4,18 +4,30 @@ exports[`Search renders without dropdown 1`] = `
 <DocumentFragment>
   <section
     class="search"
+    id="search"
   >
     <header
+      class="searchHeader"
       id="search-header"
     >
       <input
         aria-label="search"
         autocomplete="off"
+        class="input"
         id="search-input"
-        placeholder="Search"
+        placeholder="Search an item"
         type="text"
         value=""
       />
+      <button
+        aria-label="search"
+        class="button"
+        id="search-button"
+      >
+        <i
+          class="iconSearch"
+        />
+      </button>
     </header>
   </section>
 </DocumentFragment>
