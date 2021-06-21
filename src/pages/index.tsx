@@ -14,6 +14,7 @@ import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import { useRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
 import styles from '../styles/Home.module.css';
+import { Header } from '../components';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
@@ -47,59 +48,62 @@ export default function Home({ todos = [] }: { todos: Todo[] }) {
   }
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <Head>
-        <title>EcoWaste</title>
+        <title>EcoWaste - Sustainable waste disposal</title>
         <link rel="icon" href={'/favicon.ico'} />
       </Head>
 
+      <Header />
+
       <main className={styles.main}>
         <h1 className={styles.title}>EcoWaste</h1>
+        <h2>Learn how to dispose of your household items</h2>
 
-        <p className={styles.description}>
-          <code className={styles.code}>{todos.length}</code>
-          Todos
-        </p>
+        {/*<p className={styles.description}>*/}
+        {/*  <code className={styles.code}>{todos.length}</code>*/}
+        {/*  Todos*/}
+        {/*</p>*/}
 
-        <div className={styles.grid}>
-          {todos.map((todo) => (
-            <a href={`/todo/${todo.id}`} key={todo.id}>
-              <h3>{todo.name}</h3>
-              <p>{todo.description}</p>
-            </a>
-          ))}
+        {/*<div className={styles.grid}>*/}
+        {/*  {todos.map((todo) => (*/}
+        {/*    <a href={`/todo/${todo.id}`} key={todo.id}>*/}
+        {/*      <h3>{todo.name}</h3>*/}
+        {/*      <p>{todo.description}</p>*/}
+        {/*    </a>*/}
+        {/*  ))}*/}
 
-          <div className={styles.card}>
-            <h3 className={styles.title}>New Todo</h3>
+        {/*  <div className={styles.card}>*/}
+        {/*    <h3 className={styles.title}>New Appointment</h3>*/}
 
-            <AmplifyAuthenticator>
-              <form onSubmit={handleCreateTodo}>
-                <fieldset>
-                  <legend>Title</legend>
-                  <input
-                    defaultValue={`Today, ${new Date().toLocaleTimeString()}`}
-                    name="title"
-                  />
-                </fieldset>
+        {/*    <AmplifyAuthenticator>*/}
+        {/*      <form onSubmit={handleCreateTodo}>*/}
+        {/*        <fieldset>*/}
+        {/*          <legend>Title</legend>*/}
+        {/*          <input*/}
+        {/*            defaultValue={`Today, ${new Date().toLocaleTimeString()}`}*/}
+        {/*            name="title"*/}
+        {/*          />*/}
+        {/*        </fieldset>*/}
 
-                <fieldset>
-                  <legend>Content</legend>
-                  <textarea
-                    defaultValue="I built an Amplify app with Next.js!"
-                    name="content"
-                  />
-                </fieldset>
+        {/*        <fieldset>*/}
+        {/*          <legend>Content</legend>*/}
+        {/*          <textarea*/}
+        {/*            defaultValue="I built an Amplify app with Next.js!"*/}
+        {/*            name="content"*/}
+        {/*          />*/}
+        {/*        </fieldset>*/}
 
-                <button>Create Todo</button>
-                <button type="button" onClick={() => Auth.signOut()}>
-                  Sign out
-                </button>
-              </form>
-            </AmplifyAuthenticator>
-          </div>
-        </div>
+        {/*        <button>Create Todo</button>*/}
+        {/*        <button type="button" onClick={() => Auth.signOut()}>*/}
+        {/*          Sign out*/}
+        {/*        </button>*/}
+        {/*      </form>*/}
+        {/*    </AmplifyAuthenticator>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </main>
-    </div>
+    </section>
   );
 }
 
