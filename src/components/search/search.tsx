@@ -9,11 +9,12 @@ export function Search() {
   const [results, setResults] = useState([]);
 
   return (
-    <section className={styles.search}>
-      <header id={'search-header'}>
+    <section className={styles.search} id={'search'}>
+      <header className={styles.searchHeader} id={'search-header'}>
         <input
           aria-label="search"
           autoComplete="off"
+          className={styles.input}
           id="search-input"
           onChange={(e) => {
             const value = sanitizeInput(e?.target?.value);
@@ -27,6 +28,20 @@ export function Search() {
           type="text"
           value={searchQuery}
         />
+
+        <button
+          aria-label="search"
+          className={styles.button}
+          id="search-button"
+          onClick={() => {
+            if (showDropdown) {
+              setSearchQuery('');
+            }
+            setShowDropdown((value) => !value);
+          }}
+        >
+          <i className={showDropdown ? styles.iconClose : styles.iconSearch} />
+        </button>
       </header>
     </section>
   );
