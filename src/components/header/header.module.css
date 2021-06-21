@@ -1,16 +1,16 @@
 .navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navigation a {
-    color: darkgreen;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 2rem;
+  color: darkgreen;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 2rem;
 }
 
 .navigation a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
