@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import { goToSearchPage } from './goToSearchPage';
 
 describe('goToSearchPage', () => {

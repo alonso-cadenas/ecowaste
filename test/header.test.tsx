@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import { Header } from '../src/components';
 import { render } from './testUtils';
 
