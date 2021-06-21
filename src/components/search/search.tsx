@@ -6,6 +6,7 @@ import {
   goToSearchPage,
   sanitizeInput,
 } from '../../utils';
+import Link from 'next/link';
 
 export function Search() {
   const ref = useRef(null);
@@ -87,9 +88,28 @@ export function Search() {
       {showDropdown && (
         <section className={styles.searchDropdown} id={'search-dropdown'}>
           {!showResults && (
-            <p className={styles.message} id={'dropdown-message'}>
+            <p id={'dropdown-message'}>
               {getMessage(isSearching, searchQuery.length)}
             </p>
+          )}
+          {showResults && (
+            <ul className={styles.dropdownResults}>
+              <li className={styles.item}>
+                <Link href={`/search/${encodeURIComponent(searchQuery)}`}>
+                  <a
+                    className={styles.link}
+                  >{`View all results for "${searchQuery}"`}</a>
+                </Link>
+              </li>
+
+              {results.map((item, key) => (
+                <li className={styles.item} key={key}>
+                  <Link href={`/item/${item}`}>
+                    <a className={styles.link}>{item}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           )}
         </section>
       )}

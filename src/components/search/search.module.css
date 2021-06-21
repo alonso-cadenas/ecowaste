@@ -62,7 +62,29 @@
   width: calc(100% - 1.5rem);
 }
 
-.message {
+.searchDropdown p {
   padding-top: 0.5rem;
   text-align: center;
+}
+
+.dropdownResults {
+  padding: 0;
+}
+
+.item {
+  display: flex;
+}
+
+.item:hover {
+  color: darkgreen;
+}
+
+.link {
+  flex: 0 1 100%;
+  padding: 0.625rem 1rem;
+}
+
+.link:hover {
+  background-color: darkgreen;
+  color: white;
 }
