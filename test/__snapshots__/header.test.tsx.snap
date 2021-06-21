@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders with sign in 1`] = `
+<DocumentFragment>
+  <nav
+    class="navigation"
+    id="header"
+  >
+    <a
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      href="/sign-in"
+    >
+      Sign in
+    </a>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`Header renders without sign in 1`] = `
+<DocumentFragment>
+  <nav
+    class="navigation"
+    id="header"
+  >
+    <a
+      href="/"
+    >
+      Home
+    </a>
+  </nav>
+</DocumentFragment>
+`;

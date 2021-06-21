@@ -16,19 +16,11 @@ Three routes are implemented :
 
 - `/` : A server-rendered route that uses `getServersideProps` to load data from AppSync and renders it on the server (Code in [pages/index.tsx](src/pages/index.tsx))
 
-- `/todo/[id]` : A dynamic route that uses `getStaticPaths`, `getStaticProps` and the id from the provided context to load a single todo from AppSync and render it on the server. (Code in [pages/todo/[id].tsx](src/pages/todo/[id].tsx))
+- `/sign-in` : A static route that uses Amazon Cognito to authenticate and authorize users. (Code in [pages/sign-in/index.tsx](src/pages/sign-in/index.tsx))
 
-- `/item/[id]` : A dynamic route that uses `getStaticPaths`, `getStaticProps` and the id from the provided context to load a single todo from AppSync and render it on the server. (Code in [pages/item/[id].tsx](src/pages/item/[id].tsx))
+- `/item/[id]` : A dynamic sroute that uses `getStaticPaths`, `getStaticProps` and the id from the provided context to load a single todo from AppSync and render it on the server. (Code in [pages/item/[id].tsx](src/pages/item/[id].tsx))
 
 ## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-aws-amplify-typescript nextjs-aws-amplify-typescript-app
-# or
-yarn create next-app --example with-aws-amplify-typescript nextjs-aws-amplify-typescript-app
-```
 
 ### Initialize and deploy the Amplify project
 
