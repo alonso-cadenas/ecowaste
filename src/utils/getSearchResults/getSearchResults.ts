@@ -3,5 +3,6 @@
  * @param searchQuery
  */
 export function getSearchResults(searchQuery: string) {
-  return Promise.resolve(['metal spoon', 'plastic spoon', 'wooden spoon']);
+  // return Promise.resolve(['metal spoon', 'plastic spoon', 'wooden spoon']);
+  return Promise.resolve([]);
 }
