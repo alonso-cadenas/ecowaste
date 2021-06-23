@@ -11,3 +11,30 @@ type Todo
   name: String!
   description: String
 }
+
+enum Category {
+  COMPOSTABLE
+  RECYCLABLE
+  REUSABLE
+  HAZARDOUS
+  TRIMMINGS
+  LANDFILL
+  DONATIONS
+}
+
+type Item
+  @model
+  @searchable
+  @auth(
+    rules: [
+      { allow: owner } # Allow the creator of a todo to perform Create, Update, Delete operations.
+      { allow: public, operations: [read] } # Allow public (guest users without an account) to Read todos.
+      { allow: private, operations: [read] } # Allow private (other signed in users) to Read todos.
+    ]
+  ) {
+  id: ID!
+  name: String!
+  description: String
+  imageUrl: String
+  category: Category
+}
