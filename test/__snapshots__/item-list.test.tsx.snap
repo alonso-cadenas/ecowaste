@@ -8,13 +8,28 @@ exports[`ItemList renders with items 1`] = `
   >
     <ul>
       <li>
-        metal spoon
+        <a
+          href="/item/undefined"
+          style="color: darkgreen;"
+        >
+          <h4 />
+        </a>
       </li>
       <li>
-        plastic spoon
+        <a
+          href="/item/undefined"
+          style="color: darkgreen;"
+        >
+          <h4 />
+        </a>
       </li>
       <li>
-        wooden spoon
+        <a
+          href="/item/undefined"
+          style="color: darkgreen;"
+        >
+          <h4 />
+        </a>
       </li>
     </ul>
   </section>

@@ -7,6 +7,7 @@ import {
   sanitizeInput,
 } from '../../utils';
 import Link from 'next/link';
+import { Item } from '../../API';
 
 export function Search() {
   const ref = useRef(null);
@@ -102,10 +103,10 @@ export function Search() {
                 </Link>
               </li>
 
-              {results.map((item, key) => (
+              {results.map((item: Item, key) => (
                 <li className={styles.item} key={key}>
-                  <Link href={`/item/${item}`}>
-                    <a className={styles.link}>{item}</a>
+                  <Link href={`/item/${item.id}`}>
+                    <a className={styles.link}>{item.name}</a>
                   </Link>
                 </li>
               ))}

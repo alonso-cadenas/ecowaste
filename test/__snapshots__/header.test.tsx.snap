@@ -12,6 +12,11 @@ exports[`Header renders with sign in 1`] = `
       Home
     </a>
     <a
+      href="/browse"
+    >
+      Browse Categories
+    </a>
+    <a
       href="/sign-in"
     >
       Sign in
@@ -30,6 +35,11 @@ exports[`Header renders without sign in 1`] = `
       href="/"
     >
       Home
+    </a>
+    <a
+      href="/browse"
+    >
+      Browse Categories
     </a>
   </nav>
 </DocumentFragment>
