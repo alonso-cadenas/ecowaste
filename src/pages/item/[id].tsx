@@ -1,17 +1,18 @@
 import { Amplify, API, withSSRContext } from 'aws-amplify';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { DeleteTodoInput, GetTodoQuery, Todo, ListTodosQuery } from '../../API';
+import { DeleteItemInput, GetItemQuery, Item, ListItemsQuery } from '../../API';
 import awsExports from '../../aws-exports';
-import { deleteTodo } from '../../graphql/mutations';
-import { getTodo, listTodos } from '../../graphql/queries';
+import { deleteItem } from '../../graphql/mutations';
+import { getItem, listItems } from '../../graphql/queries';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import styles from '../../styles/Home.module.css';
+import { Header } from '../../components';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
-export default function ItemPage({ todo }: { todo: Todo }) {
+export default function ItemPage({ item }: { item: Item }) {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -24,13 +25,13 @@ export default function ItemPage({ todo }: { todo: Todo }) {
 
   async function handleDelete(): Promise<void> {
     try {
-      const deleteInput: DeleteTodoInput = {
-        id: todo.id,
+      const deleteInput: DeleteItemInput = {
+        id: item.id,
       };
 
       await API.graphql({
         authMode: GRAPHQL_AUTH_MODE.AMAZON_COGNITO_USER_POOLS,
-        query: deleteTodo,
+        query: deleteItem,
         variables: {
           input: deleteInput,
         },
@@ -46,18 +47,21 @@ export default function ItemPage({ todo }: { todo: Todo }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{todo.name} – Amplify + Next.js</title>
+        <title>{item.name} – Amplify + Next.js</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
+
       <main className={styles.main}>
-        <h1 className={styles.title}>{todo.name}</h1>
-        <p className={styles.description}>{todo.description}</p>
+        <h1 className={styles.title}>{item.name}</h1>
+        <p className={styles.description}>{item.category}</p>
+        <img id={item.name} alt={item.name} src={item.imageUrl} width={600} />
       </main>
 
       <footer>
         <button className={styles.footer} onClick={handleDelete}>
-          💥 Delete todo
+          💥 Delete item
         </button>
       </footer>
     </div>
@@ -67,13 +71,13 @@ export default function ItemPage({ todo }: { todo: Todo }) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const SSR = withSSRContext();
 
-  const todosQuery = (await SSR.API.graphql({
-    query: listTodos,
+  const itemsQuery = (await SSR.API.graphql({
+    query: listItems,
     authMode: GRAPHQL_AUTH_MODE.API_KEY,
-  })) as { data: ListTodosQuery; errors: any[] };
+  })) as { data: ListItemsQuery; errors: any[] };
 
-  const paths = todosQuery.data.listTodos.items.map((todo: Todo) => ({
-    params: { id: todo.id },
+  const paths = itemsQuery.data.listItems.items.map((item: Item) => ({
+    params: { id: item.id },
   }));
 
   return {
@@ -86,15 +90,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const SSR = withSSRContext();
 
   const response = (await SSR.API.graphql({
-    query: getTodo,
+    query: getItem,
     variables: {
       id: params.id,
     },
-  })) as { data: GetTodoQuery };
+  })) as { data: GetItemQuery };
 
   return {
     props: {
-      todo: response.data.getTodo,
+      item: response.data.getItem,
     },
   };
 };
