@@ -69,9 +69,13 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
 
         <div className={styles.grid}>
           {items.map((item) => (
-            <a href={`/item/${item.id}`} key={item.id}>
+            <a
+              href={`/item/${item.id}`}
+              key={item.id}
+              style={{ margin: '1rem' }}
+            >
               <h3>{item.name}</h3>
-              <p>{item.description}</p>
+              <p>{item.category}</p>
             </a>
           ))}
 
