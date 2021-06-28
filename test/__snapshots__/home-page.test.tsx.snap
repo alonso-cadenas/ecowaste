@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page matches snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="container"
+  >
+    <nav
+      class="navigation"
+      id="header"
+    >
+      <a
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        href="/browse"
+      >
+        Browse Categories
+      </a>
+      <a
+        href="/sign-in"
+      >
+        Sign in
+      </a>
+    </nav>
+    <main
+      class="main"
+    >
+      <h1
+        class="title"
+      >
+        EcoWaste
+      </h1>
+      <h2>
+        Learn how to dispose of your household items
+      </h2>
+      <section
+        class="search"
+        id="search"
+      >
+        <header
+          class="searchHeader"
+          id="search-header"
+        >
+          <input
+            aria-label="search"
+            autocomplete="off"
+            class="input"
+            id="search-input"
+            placeholder="Search an item"
+            type="text"
+            value=""
+          />
+          <button
+            aria-label="search"
+            class="button"
+            id="search-button"
+          >
+            <i
+              class="iconSearch"
+            />
+          </button>
+        </header>
+      </section>
+      <img
+        alt="Banner"
+        id="banner"
+        src="/banner.jpeg"
+      />
+    </main>
+  </section>
+</DocumentFragment>
+`;

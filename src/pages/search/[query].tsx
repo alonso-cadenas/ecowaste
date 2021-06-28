@@ -1,11 +1,8 @@
 import { GetServerSideProps } from 'next';
 import { Header, ItemList } from '../../components';
-import { Amplify, withSSRContext } from 'aws-amplify';
+import { withSSRContext } from 'aws-amplify';
 import { searchItems } from '../../graphql/queries';
 import { Item, SearchItemsQuery } from '../../API';
-import awsExports from '../../aws-exports';
-
-Amplify.configure({ ...awsExports, ssr: true });
 
 export default function SearchPage({
   items = [],

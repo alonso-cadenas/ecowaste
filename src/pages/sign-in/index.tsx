@@ -3,12 +3,8 @@ import {
   AmplifyContainer,
   AmplifySignOut,
 } from '@aws-amplify/ui-react';
-import { Amplify, Auth } from 'aws-amplify';
 import Head from 'next/head';
-import awsExports from '../../aws-exports';
 import { Header } from '../../components';
-
-Amplify.configure({ ...awsExports, ssr: true });
 
 export default function SignInPage() {
   return (

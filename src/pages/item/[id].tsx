@@ -1,16 +1,13 @@
-import { Amplify, API, withSSRContext } from 'aws-amplify';
+import { API, withSSRContext } from 'aws-amplify';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { DeleteItemInput, GetItemQuery, Item, ListItemsQuery } from '../../API';
-import awsExports from '../../aws-exports';
 import { deleteItem } from '../../graphql/mutations';
 import { getItem, listItems } from '../../graphql/queries';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import styles from '../../styles/Home.module.css';
 import { Header } from '../../components';
-
-Amplify.configure({ ...awsExports, ssr: true });
 
 export default function ItemPage({ item }: { item: Item }) {
   const router = useRouter();
