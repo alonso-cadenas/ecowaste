@@ -1,13 +1,10 @@
-import { Amplify, withSSRContext } from 'aws-amplify';
+import { withSSRContext } from 'aws-amplify';
 import Head from 'next/head';
-import awsExports from '../../aws-exports';
 import { GetServerSideProps } from 'next';
 import styles from '../../styles/Home.module.css';
 import { listItems } from '../../graphql/queries';
 import { Category, Item, ListItemsQuery } from '../../API';
 import { Header } from '../../components';
-
-Amplify.configure({ ...awsExports, ssr: true });
 
 const CATEGORIES = [
   Category.COMPOSTABLE,

@@ -1,10 +1,6 @@
-import { Amplify } from 'aws-amplify';
 import Head from 'next/head';
-import awsExports from '../aws-exports';
 import styles from '../styles/Home.module.css';
 import { Header, Search } from '../components';
-
-Amplify.configure({ ...awsExports, ssr: true });
 
 export default function HomePage() {
   return (

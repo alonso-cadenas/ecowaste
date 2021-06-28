@@ -1,7 +1,6 @@
 import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
-import { Amplify, API, Auth, withSSRContext } from 'aws-amplify';
+import { API, Auth, withSSRContext } from 'aws-amplify';
 import Head from 'next/head';
-import awsExports from '../../aws-exports';
 import { createItem } from '../../graphql/mutations';
 import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import { useRouter } from 'next/router';
@@ -16,8 +15,6 @@ import {
   ListItemsQuery,
 } from '../../API';
 import { Header } from '../../components';
-
-Amplify.configure({ ...awsExports, ssr: true });
 
 export default function NewItemPage({ items = [] }: { items: Item[] }) {
   const router = useRouter();
