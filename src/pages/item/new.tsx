@@ -30,7 +30,7 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
     try {
       const createInput: CreateItemInput = {
         name: form.get('name').toString(),
-        category: Category[form.get('category').toString().toUpperCase()],
+        category: form.get('category') as Category,
         imageUrl: form.get('imageUrl').toString(),
       };
 
@@ -86,17 +86,41 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
               <form onSubmit={handleCreateItem}>
                 <fieldset>
                   <legend>Name</legend>
-                  <input name="name" />
+                  <input name="name" required />
                 </fieldset>
 
                 <fieldset>
                   <legend>Image URL</legend>
-                  <textarea name="imageUrl" />
+                  <input
+                    name="imageUrl"
+                    type="url"
+                    placeholder="https://example.com"
+                    required
+                  />
                 </fieldset>
 
                 <fieldset>
                   <legend>Category</legend>
-                  <textarea name="category" />
+                  <select name="category">
+                    <option value={Category.COMPOSTABLE}>
+                      {Category.COMPOSTABLE}
+                    </option>
+                    <option value={Category.DONATIONS}>
+                      {Category.DONATIONS}
+                    </option>
+                    <option value={Category.HAZARDOUS}>
+                      {Category.HAZARDOUS}
+                    </option>
+                    <option value={Category.LANDFILL}>
+                      {Category.LANDFILL}
+                    </option>
+                    <option value={Category.RECYCLABLE}>
+                      {Category.RECYCLABLE}
+                    </option>
+                    <option value={Category.REUSABLE}>
+                      {Category.REUSABLE}
+                    </option>
+                  </select>
                 </fieldset>
 
                 <button>Create Item</button>
