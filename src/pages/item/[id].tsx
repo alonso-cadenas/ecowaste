@@ -1,5 +1,4 @@
 import { API, withSSRContext } from 'aws-amplify';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { DeleteItemInput, GetItemQuery, Item, ListItemsQuery } from '../../API';
 import { deleteItem } from '../../graphql/mutations';
@@ -43,11 +42,6 @@ export default function ItemPage({ item }: { item: Item }) {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>{item.name} – Amplify + Next.js</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Header />
 
       <main className={styles.main}>

@@ -1,6 +1,5 @@
 import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
 import { API, Auth, withSSRContext } from 'aws-amplify';
-import Head from 'next/head';
 import { createItem } from '../../graphql/mutations';
 import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import { useRouter } from 'next/router';
@@ -48,11 +47,6 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
 
   return (
     <section className={styles.container}>
-      <Head>
-        <title>EcoWaste - Sustainable waste disposal</title>
-        <link rel="icon" href={'/favicon.ico'} />
-      </Head>
-
       <Header />
 
       <main className={styles.main}>

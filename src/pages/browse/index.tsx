@@ -1,5 +1,4 @@
 import { withSSRContext } from 'aws-amplify';
-import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 import styles from '../../styles/Home.module.css';
 import { listItems } from '../../graphql/queries';
@@ -35,11 +34,6 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
 
   return (
     <section className={styles.container}>
-      <Head>
-        <title>EcoWaste - Sustainable waste disposal</title>
-        <link rel="icon" href={'/favicon.ico'} />
-      </Head>
-
       <Header />
 
       <main className={styles.main}>
