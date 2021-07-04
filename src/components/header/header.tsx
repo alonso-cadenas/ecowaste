@@ -16,6 +16,10 @@ export function Header({ showSignIn = true }: Props) {
         <a>Browse Categories</a>
       </Link>
 
+      <Link href={'/item/new'}>
+        <a>Manage Items</a>
+      </Link>
+
       {showSignIn && (
         <Link href={'/sign-in'}>
           <a>Sign in</a>
