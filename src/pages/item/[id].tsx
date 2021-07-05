@@ -7,6 +7,7 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import styles from '../../styles/Home.module.css';
 import { Header } from '../../components';
+import Head from 'next/head';
 
 export default function ItemPage({ item }: { item: Item }) {
   const router = useRouter();
@@ -42,6 +43,23 @@ export default function ItemPage({ item }: { item: Item }) {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>{item.name} disposal - EcoWaste</title>
+        <meta name="description" content="Learn how to dispose of an item." />
+        <meta
+          property="og:title"
+          content={`${item.name} disposal - EcoWaste`}
+        />
+        <meta
+          property="og:description"
+          content="Learn how to dispose of an item."
+        />
+        <meta
+          property="og:url"
+          content={`https://ecowaste.com/item/${item.id}`}
+        />
+      </Head>
+
       <Header />
 
       <main className={styles.main}>

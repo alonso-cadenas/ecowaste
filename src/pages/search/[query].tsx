@@ -3,6 +3,7 @@ import { Header, ItemList } from '../../components';
 import { withSSRContext } from 'aws-amplify';
 import { searchItems } from '../../graphql/queries';
 import { Item, SearchItemsQuery } from '../../API';
+import Head from 'next/head';
 
 export default function SearchPage({
   items = [],
@@ -14,7 +15,19 @@ export default function SearchPage({
   const hasResults = !!items?.length;
   return (
     <section>
+      <Head>
+        <title>Search Items - EcoWaste</title>
+        <meta name="description" content="Search items to dispose." />
+        <meta property="og:title" content="Search Items - EcoWaste" />
+        <meta property="og:description" content="Search items to dispose." />
+        <meta
+          property="og:url"
+          content={`https://ecowaste.com/search/${query}`}
+        />
+      </Head>
+
       <Header />
+
       <h1 style={{ marginLeft: '1rem' }}>
         {hasResults ? 'View all search results' : 'Unable to find any results'}{' '}
         for &quot;{query}&quot;

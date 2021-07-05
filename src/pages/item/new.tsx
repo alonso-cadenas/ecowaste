@@ -14,6 +14,7 @@ import {
   ListItemsQuery,
 } from '../../API';
 import { Header } from '../../components';
+import Head from 'next/head';
 
 export default function NewItemPage({ items = [] }: { items: Item[] }) {
   const router = useRouter();
@@ -47,6 +48,14 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
 
   return (
     <section className={styles.container}>
+      <Head>
+        <title>Manage Items - EcoWaste</title>
+        <meta name="description" content="Manage items." />
+        <meta property="og:title" content="Manage Items - EcoWaste" />
+        <meta property="og:description" content="Manage items." />
+        <meta property="og:url" content="https://ecowaste.com/item/new" />
+      </Head>
+
       <Header />
 
       <main className={styles.main}>
