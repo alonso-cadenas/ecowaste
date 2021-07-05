@@ -20,6 +20,11 @@ exports[`Home page matches snapshot 1`] = `
         Browse Categories
       </a>
       <a
+        href="/item/new"
+      >
+        Manage Items
+      </a>
+      <a
         href="/sign-in"
       >
         Sign in

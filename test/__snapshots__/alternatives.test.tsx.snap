@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alternatives renders with alternatives 1`] = `
+<DocumentFragment>
+  <section
+    id="alternatives"
+  >
+    <h2>
+      Alternatives
+    </h2>
+    <ul>
+      <li>
+        metal spoon
+      </li>
+      <li>
+        plastic spoon
+      </li>
+      <li>
+        wooden spoon
+      </li>
+    </ul>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Alternatives renders without alternatives 1`] = `
+<DocumentFragment>
+  <section
+    id="alternatives"
+  >
+    <h2>
+      Alternatives
+    </h2>
+    <ul />
+  </section>
+</DocumentFragment>
+`;
