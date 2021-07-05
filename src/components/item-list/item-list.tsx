@@ -7,11 +7,11 @@ type Props = {
 
 export function ItemList({ items }: Props) {
   return (
-    <section className={styles.itemList} id={'item-list'}>
+    <section id={'item-list'}>
       <ul>
         {items.map((i, key) => (
           <li key={key}>
-            <a href={`/item/${i.id}`} key={i.id} style={{ color: 'darkgreen' }}>
+            <a href={`/item/${i.id}`} key={i.id} className={styles.link}>
               <h4>{i.name}</h4>
             </a>
           </li>

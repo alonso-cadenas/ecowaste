@@ -18,7 +18,7 @@ Three routes are implemented :
 
 - `/sign-in` : A static route that uses Amazon Cognito to authenticate and authorize users. (Code in [pages/sign-in/index.tsx](src/pages/sign-in/index.tsx))
 
-- `/item/[id]` : A dynamic sroute that uses `getStaticPaths`, `getStaticProps` and the id from the provided context to load a single todo from AppSync and render it on the server. (Code in [pages/item/[id].tsx](src/pages/item/[id].tsx))
+- `/item/[id]` : A dynamic sroute that uses `getStaticPaths`, `getStaticProps` and the id from the provided context to load a single item from AppSync and render it on the server. (Code in [pages/item/[id].tsx](src/pages/item/[id].tsx))
 
 ## How to use
 

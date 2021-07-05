@@ -2,37 +2,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getTodo = /* GraphQL */ `
-  query GetTodo($id: ID!) {
-    getTodo(id: $id) {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const listTodos = /* GraphQL */ `
-  query ListTodos(
-    $filter: ModelTodoFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        description
-        createdAt
-        updatedAt
-        owner
-      }
-      nextToken
-    }
-  }
-`;
 export const getItem = /* GraphQL */ `
   query GetItem($id: ID!) {
     getItem(id: $id) {
@@ -41,6 +10,7 @@ export const getItem = /* GraphQL */ `
       description
       imageUrl
       category
+      alternatives
       createdAt
       updatedAt
       owner
@@ -60,6 +30,7 @@ export const listItems = /* GraphQL */ `
         description
         imageUrl
         category
+        alternatives
         createdAt
         updatedAt
         owner
@@ -89,6 +60,7 @@ export const searchItems = /* GraphQL */ `
         description
         imageUrl
         category
+        alternatives
         createdAt
         updatedAt
         owner
