@@ -104,6 +104,40 @@ export type DeleteItemInput = {
   id: string,
 };
 
+export type CreateLocationInput = {
+  id?: string | null,
+  name: string,
+  description?: string | null,
+};
+
+export type ModelLocationConditionInput = {
+  name?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  and?: Array< ModelLocationConditionInput | null > | null,
+  or?: Array< ModelLocationConditionInput | null > | null,
+  not?: ModelLocationConditionInput | null,
+};
+
+export type Location = {
+  __typename: "Location",
+  id: string,
+  name: string,
+  description?: string | null,
+  createdAt: string,
+  updatedAt: string,
+  owner?: string | null,
+};
+
+export type UpdateLocationInput = {
+  id: string,
+  name?: string | null,
+  description?: string | null,
+};
+
+export type DeleteLocationInput = {
+  id: string,
+};
+
 export type ModelItemFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
@@ -210,6 +244,21 @@ export type SearchableItemConnection = {
   total?: number | null,
 };
 
+export type ModelLocationFilterInput = {
+  id?: ModelIDInput | null,
+  name?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  and?: Array< ModelLocationFilterInput | null > | null,
+  or?: Array< ModelLocationFilterInput | null > | null,
+  not?: ModelLocationFilterInput | null,
+};
+
+export type ModelLocationConnection = {
+  __typename: "ModelLocationConnection",
+  items?:  Array<Location | null > | null,
+  nextToken?: string | null,
+};
+
 export type CreateItemMutationVariables = {
   input: CreateItemInput,
   condition?: ModelItemConditionInput | null,
@@ -264,6 +313,57 @@ export type DeleteItemMutation = {
     imageUrl?: string | null,
     category: Category,
     alternatives?: Array< string > | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type CreateLocationMutationVariables = {
+  input: CreateLocationInput,
+  condition?: ModelLocationConditionInput | null,
+};
+
+export type CreateLocationMutation = {
+  createLocation?:  {
+    __typename: "Location",
+    id: string,
+    name: string,
+    description?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type UpdateLocationMutationVariables = {
+  input: UpdateLocationInput,
+  condition?: ModelLocationConditionInput | null,
+};
+
+export type UpdateLocationMutation = {
+  updateLocation?:  {
+    __typename: "Location",
+    id: string,
+    name: string,
+    description?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type DeleteLocationMutationVariables = {
+  input: DeleteLocationInput,
+  condition?: ModelLocationConditionInput | null,
+};
+
+export type DeleteLocationMutation = {
+  deleteLocation?:  {
+    __typename: "Location",
+    id: string,
+    name: string,
+    description?: string | null,
     createdAt: string,
     updatedAt: string,
     owner?: string | null,
@@ -342,6 +442,44 @@ export type SearchItemsQuery = {
   } | null,
 };
 
+export type GetLocationQueryVariables = {
+  id: string,
+};
+
+export type GetLocationQuery = {
+  getLocation?:  {
+    __typename: "Location",
+    id: string,
+    name: string,
+    description?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type ListLocationsQueryVariables = {
+  filter?: ModelLocationFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListLocationsQuery = {
+  listLocations?:  {
+    __typename: "ModelLocationConnection",
+    items?:  Array< {
+      __typename: "Location",
+      id: string,
+      name: string,
+      description?: string | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    } | null > | null,
+    nextToken?: string | null,
+  } | null,
+};
+
 export type OnCreateItemSubscription = {
   onCreateItem?:  {
     __typename: "Item",
@@ -381,6 +519,42 @@ export type OnDeleteItemSubscription = {
     imageUrl?: string | null,
     category: Category,
     alternatives?: Array< string > | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type OnCreateLocationSubscription = {
+  onCreateLocation?:  {
+    __typename: "Location",
+    id: string,
+    name: string,
+    description?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type OnUpdateLocationSubscription = {
+  onUpdateLocation?:  {
+    __typename: "Location",
+    id: string,
+    name: string,
+    description?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type OnDeleteLocationSubscription = {
+  onDeleteLocation?:  {
+    __typename: "Location",
+    id: string,
+    name: string,
+    description?: string | null,
     createdAt: string,
     updatedAt: string,
     owner?: string | null,

@@ -13,9 +13,9 @@ type Item
   @searchable
   @auth(
     rules: [
-      { allow: owner } # Allow the creator of a todo to perform Create, Update, Delete operations.
-      { allow: public, operations: [read] } # Allow public (guest users without an account) to Read todos.
-      { allow: private, operations: [read] } # Allow private (other signed in users) to Read todos.
+      { allow: owner } # Allow the creator of a item to perform Create, Update, Delete operations.
+      { allow: public, operations: [read] } # Allow public (guest users without an account) to Read items.
+      { allow: private, operations: [read] } # Allow private (other signed in users) to Read items.
     ]
   ) {
   id: ID!
@@ -24,4 +24,20 @@ type Item
   imageUrl: String
   category: Category!
   alternatives: [String!]
+}
+
+
+
+type Location
+@model
+@auth(
+  rules: [
+    { allow: owner } # Allow the creator of a location to perform Create, Update, Delete operations.
+    { allow: public, operations: [read] } # Allow public (guest users without an account) to Read locations.
+    { allow: private, operations: [read] } # Allow private (other signed in users) to Read locations.
+  ]
+) {
+  id: ID!
+  name: String!
+  description: String
 }
