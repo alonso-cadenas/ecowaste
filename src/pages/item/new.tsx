@@ -29,6 +29,9 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
         name: form.get('name').toString(),
         category: form.get('category') as Category,
         imageUrl: form.get('imageUrl').toString(),
+        alternatives: form
+          .getAll('alternative')
+          .filter((a) => !!a) as Array<string>,
       };
 
       const request = (await API.graphql({
@@ -86,7 +89,7 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
               <form onSubmit={handleCreateItem}>
                 <fieldset>
                   <legend>Name</legend>
-                  <input name="name" required />
+                  <input name="name" required type="text" />
                 </fieldset>
 
                 <fieldset>
@@ -121,6 +124,21 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
                       {Category.REUSABLE}
                     </option>
                   </select>
+                </fieldset>
+
+                <fieldset>
+                  <legend>Alternative #1</legend>
+                  <input name="alternative" type="text" />
+                </fieldset>
+
+                <fieldset>
+                  <legend>Alternative #2</legend>
+                  <input name="alternative" type="text" />
+                </fieldset>
+
+                <fieldset>
+                  <legend>Alternative #3</legend>
+                  <input name="alternative" type="text" />
                 </fieldset>
 
                 <button className={styles.confirm}>Create Item</button>
