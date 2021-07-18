@@ -127,18 +127,14 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
                 </fieldset>
 
                 <fieldset>
-                  <legend>Alternative #1</legend>
-                  <input name="alternative" type="text" />
-                </fieldset>
-
-                <fieldset>
-                  <legend>Alternative #2</legend>
-                  <input name="alternative" type="text" />
-                </fieldset>
-
-                <fieldset>
-                  <legend>Alternative #3</legend>
-                  <input name="alternative" type="text" />
+                  <legend>Sustainable Alternatives</legend>
+                  #1 <input name="alternative" type="text" />
+                  <br />
+                  <br />
+                  #2 <input name="alternative" type="text" />
+                  <br />
+                  <br />
+                  #3 <input name="alternative" type="text" />
                 </fieldset>
 
                 <button className={styles.confirm}>Create Item</button>
