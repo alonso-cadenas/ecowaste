@@ -122,3 +122,35 @@
     flex-direction: column;
   }
 }
+
+.cancel {
+  background-color: white;
+  border: 2px solid black;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: bold;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.cancel:hover {
+  background-color: black;
+  color: white;
+}
+
+.confirm {
+  background-color: white;
+  border: 2px solid darkgreen;
+  color: darkgreen;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.confirm:hover {
+  background-color: darkgreen;
+  color: white;
+}
