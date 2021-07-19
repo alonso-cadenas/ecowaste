@@ -1,13 +1,13 @@
 import styles from './alternatives.module.css';
 
 type Props = {
-  alternatives: String[];
+  alternatives: Array<string>;
 };
 
 export function Alternatives({ alternatives }: Props) {
   return (
     <section id={'alternatives'}>
-      <h2>Alternatives</h2>
+      <h2>Sustainable Alternatives</h2>
       <ul>
         {alternatives.map((a: string, index: number) => (
           <li key={index}>{a}</li>

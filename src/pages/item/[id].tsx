@@ -34,7 +34,7 @@ export default function ItemPage({ item }: { item: Item }) {
         },
       });
 
-      router.push(`/`);
+      router.push(`/item/new`);
     } catch ({ errors }) {
       console.error(...errors);
       throw new Error(errors[0].message);

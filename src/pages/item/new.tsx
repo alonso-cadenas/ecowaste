@@ -29,6 +29,9 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
         name: form.get('name').toString(),
         category: form.get('category') as Category,
         imageUrl: form.get('imageUrl').toString(),
+        alternatives: form
+          .getAll('alternative')
+          .filter((a) => !!a) as Array<string>,
       };
 
       const request = (await API.graphql({
@@ -86,7 +89,7 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
               <form onSubmit={handleCreateItem}>
                 <fieldset>
                   <legend>Name</legend>
-                  <input name="name" required />
+                  <input name="name" required type="text" />
                 </fieldset>
 
                 <fieldset>
@@ -123,8 +126,23 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
                   </select>
                 </fieldset>
 
-                <button>Create Item</button>
-                <button type="button" onClick={() => Auth.signOut()}>
+                <fieldset>
+                  <legend>Sustainable Alternatives</legend>
+                  #1 <input name="alternative" type="text" />
+                  <br />
+                  <br />
+                  #2 <input name="alternative" type="text" />
+                  <br />
+                  <br />
+                  #3 <input name="alternative" type="text" />
+                </fieldset>
+
+                <button className={styles.confirm}>Create Item</button>
+                <button
+                  className={styles.cancel}
+                  type="button"
+                  onClick={() => Auth.signOut()}
+                >
                   Sign out
                 </button>
               </form>
