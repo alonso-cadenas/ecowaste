@@ -6,7 +6,7 @@ import { getItem, listItems } from '../../graphql/queries';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import styles from '../../styles/Home.module.css';
-import { Alternatives, Header } from '../../components';
+import { Alternatives, Header, Location } from '../../components';
 import Head from 'next/head';
 
 export default function ItemPage({ item }: { item: Item }) {
@@ -69,6 +69,7 @@ export default function ItemPage({ item }: { item: Item }) {
         {!!item.alternatives?.length && (
           <Alternatives alternatives={item.alternatives} />
         )}
+        {!!item.location?.id && <Location location={item.location} />}
       </main>
 
       <footer className={styles.footer}>
