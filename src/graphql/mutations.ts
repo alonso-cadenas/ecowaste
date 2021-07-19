@@ -14,9 +14,23 @@ export const createItem = /* GraphQL */ `
       imageUrl
       category
       alternatives
+      locationId
       createdAt
       updatedAt
       owner
+      location {
+        id
+        name
+        description
+        street
+        city
+        state
+        zipCode
+        country
+        createdAt
+        updatedAt
+        owner
+      }
     }
   }
 `;
@@ -32,9 +46,23 @@ export const updateItem = /* GraphQL */ `
       imageUrl
       category
       alternatives
+      locationId
       createdAt
       updatedAt
       owner
+      location {
+        id
+        name
+        description
+        street
+        city
+        state
+        zipCode
+        country
+        createdAt
+        updatedAt
+        owner
+      }
     }
   }
 `;
@@ -50,9 +78,23 @@ export const deleteItem = /* GraphQL */ `
       imageUrl
       category
       alternatives
+      locationId
       createdAt
       updatedAt
       owner
+      location {
+        id
+        name
+        description
+        street
+        city
+        state
+        zipCode
+        country
+        createdAt
+        updatedAt
+        owner
+      }
     }
   }
 `;
@@ -65,6 +107,11 @@ export const createLocation = /* GraphQL */ `
       id
       name
       description
+      street
+      city
+      state
+      zipCode
+      country
       createdAt
       updatedAt
       owner
@@ -80,6 +127,11 @@ export const updateLocation = /* GraphQL */ `
       id
       name
       description
+      street
+      city
+      state
+      zipCode
+      country
       createdAt
       updatedAt
       owner
@@ -95,6 +147,11 @@ export const deleteLocation = /* GraphQL */ `
       id
       name
       description
+      street
+      city
+      state
+      zipCode
+      country
       createdAt
       updatedAt
       owner
