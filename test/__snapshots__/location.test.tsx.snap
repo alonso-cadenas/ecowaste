@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location renders with location 1`] = `
+<DocumentFragment>
+  <section
+    class="location"
+    id="location"
+  >
+    <h2>
+      Nearest Drop-off Location
+    </h2>
+    <h3>
+      Waste Disposal Center
+    </h3>
+    <p>
+      123 Waste Disposal Street, Austin, Texas - 74725
+    </p>
+  </section>
+</DocumentFragment>
+`;

@@ -77,7 +77,7 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
               key={item.id}
               style={{ margin: '1rem' }}
             >
-              <h3>{item.name}</h3>
+              <h3 style={{ color: 'darkgreen' }}>{item.name}</h3>
               <p>{item.category}</p>
             </a>
           ))}

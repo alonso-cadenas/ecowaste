@@ -11,9 +11,23 @@ export const getItem = /* GraphQL */ `
       imageUrl
       category
       alternatives
+      locationId
       createdAt
       updatedAt
       owner
+      location {
+        id
+        name
+        description
+        street
+        city
+        state
+        zipCode
+        country
+        createdAt
+        updatedAt
+        owner
+      }
     }
   }
 `;
@@ -31,9 +45,23 @@ export const listItems = /* GraphQL */ `
         imageUrl
         category
         alternatives
+        locationId
         createdAt
         updatedAt
         owner
+        location {
+          id
+          name
+          description
+          street
+          city
+          state
+          zipCode
+          country
+          createdAt
+          updatedAt
+          owner
+        }
       }
       nextToken
     }
@@ -61,9 +89,23 @@ export const searchItems = /* GraphQL */ `
         imageUrl
         category
         alternatives
+        locationId
         createdAt
         updatedAt
         owner
+        location {
+          id
+          name
+          description
+          street
+          city
+          state
+          zipCode
+          country
+          createdAt
+          updatedAt
+          owner
+        }
       }
       nextToken
       total
@@ -76,6 +118,11 @@ export const getLocation = /* GraphQL */ `
       id
       name
       description
+      street
+      city
+      state
+      zipCode
+      country
       createdAt
       updatedAt
       owner
@@ -93,6 +140,11 @@ export const listLocations = /* GraphQL */ `
         id
         name
         description
+        street
+        city
+        state
+        zipCode
+        country
         createdAt
         updatedAt
         owner

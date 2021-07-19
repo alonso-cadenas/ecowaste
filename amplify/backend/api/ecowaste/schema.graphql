@@ -21,9 +21,11 @@ type Item
   id: ID!
   name: String!
   description: String
-  imageUrl: String
+  imageUrl: String!
   category: Category!
   alternatives: [String!]
+  locationId: ID
+  location: Location @connection(fields: ["locationId"])
 }
 
 type Location
@@ -38,4 +40,9 @@ type Location
   id: ID!
   name: String!
   description: String
+  street: String!
+  city: String!
+  state: String!
+  zipCode: Int!
+  country: String!
 }
