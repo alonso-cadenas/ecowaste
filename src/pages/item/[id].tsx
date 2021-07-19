@@ -71,9 +71,9 @@ export default function ItemPage({ item }: { item: Item }) {
         )}
       </main>
 
-      <footer>
-        <button className={styles.footer} onClick={handleDelete}>
-          💥 Delete item
+      <footer className={styles.footer}>
+        <button className={styles.confirm} onClick={handleDelete}>
+          💥 Delete Item
         </button>
       </footer>
     </div>

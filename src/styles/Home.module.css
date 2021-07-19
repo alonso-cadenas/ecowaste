@@ -19,7 +19,6 @@
 .footer {
   align-items: center;
   border-top: 1px solid #eaeaea;
-  cursor: pointer;
   display: flex;
   height: 100px;
   justify-content: center;
@@ -97,8 +96,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: darkgreen;
+  border-color: darkgreen;
 }
 
 .card h3 {

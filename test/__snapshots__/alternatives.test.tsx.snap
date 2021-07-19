@@ -6,7 +6,7 @@ exports[`Alternatives renders with alternatives 1`] = `
     id="alternatives"
   >
     <h2>
-      Alternatives
+      Sustainable Alternatives
     </h2>
     <ul>
       <li>
@@ -29,7 +29,7 @@ exports[`Alternatives renders without alternatives 1`] = `
     id="alternatives"
   >
     <h2>
-      Alternatives
+      Sustainable Alternatives
     </h2>
     <ul />
   </section>
