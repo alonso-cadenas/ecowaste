@@ -1,4 +1,4 @@
-import styles from './location.module.css';
+import styles from './appointment.module.css';
 import { Location as LocationModel } from '../../API';
 
 type Props = {
