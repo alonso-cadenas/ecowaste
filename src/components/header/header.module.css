@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   border: 0.25rem solid darkgreen;
-  width: 100%;
+  min-width: 100vw;
 }
 
 .navigation a {
