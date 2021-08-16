@@ -6,6 +6,12 @@
   min-width: 100vw;
 }
 
+@media screen and (max-width: 500px) {
+  .navigation {
+    flex-flow: column;
+  }
+}
+
 .navigation a {
   color: darkgreen;
   font-size: 1.5rem;

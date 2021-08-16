@@ -6,6 +6,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta property="og:type" content="website" />
+          <meta name="theme-color" content="#006400" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"

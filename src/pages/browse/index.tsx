@@ -57,9 +57,7 @@ export default function NewItemPage({ items = [] }: { items: Item[] }) {
 
         {CATEGORIES.map((category) => (
           <div className={styles.grid} key={category}>
-            <h3 style={{ flex: '1 1 100%', textAlign: 'center' }}>
-              {category}
-            </h3>
+            <h3 style={{ flex: '1 1 100%' }}>{category}</h3>
             {getCategoryItems(category)}
           </div>
         ))}
