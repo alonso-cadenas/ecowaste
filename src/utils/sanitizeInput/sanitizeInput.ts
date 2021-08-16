@@ -3,5 +3,5 @@
  * @param value
  */
 export function sanitizeInput(value: string) {
-  return value?.replace(/[^\w\s]/gi, '') || '';
+  return value?.replace(/[^\w\s]/gi, '').toLocaleLowerCase() || '';
 }
